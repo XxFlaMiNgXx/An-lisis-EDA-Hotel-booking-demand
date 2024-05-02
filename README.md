@@ -92,7 +92,7 @@ str(data_hotel)
 
 summary(data_hotel)
 ```
-
+```R
 hotel is_canceled lead_time arrival_date_year arrival_date_month arrival_date_week_number arrival_date_day_of_month
 1 Resort Hotel           0       342              2015               July                       27                         1
 2 Resort Hotel           0       737              2015               July                       27                         1
@@ -129,14 +129,15 @@ hotel is_canceled lead_time arrival_date_year arrival_date_month arrival_date_we
 5          Check-Out              2015-07-03
 6          Check-Out              2015-07-03
 
+```
 
-
-
+```R
    print(paste("Estamos evaluando", nrow(data_hotel), "líneas de código"))
 [1] "Estamos evaluando 119390 líneas de código"
 > print("Nombre de las columnas: ")
 [1] "Nombre de las columnas: "
-
+```
+```R
 colnames(data_hotel)
  [1] "hotel"                          "is_canceled"                    "lead_time"                     
  [4] "arrival_date_year"              "arrival_date_month"             "arrival_date_week_number"      
@@ -149,9 +150,9 @@ colnames(data_hotel)
 [25] "company"                        "days_in_waiting_list"           "customer_type"                 
 [28] "adr"                            "required_car_parking_spaces"    "total_of_special_requests"     
 [31] "reservation_status"             "reservation_status_date"       
+```
 
-
-
+```R
     hotel                    is_canceled                      lead_time              arrival_date_year 
                    "character"                      "integer"                      "integer"                      "integer" 
             arrival_date_month       arrival_date_week_number      arrival_date_day_of_month        stays_in_weekend_nights 
@@ -170,7 +171,7 @@ colnames(data_hotel)
                      "integer"                      "integer"                    "character"                    "character" 
 
 
-
+```
     'data.frame':	119390 obs. of  32 variables:
  ```R   
  $ hotel                         : chr  "Resort Hotel" "Resort Hotel" "Resort Hotel" "Resort Hotel" ...
@@ -228,7 +229,7 @@ data_hotel[is.na(data_hotel)]<-0
 
 unlist(lapply(data_hotel, function(x) any(is.na(x))))
 ```
-
+```R
     [1] "Columnas con NAs:"
 
 
@@ -250,8 +251,8 @@ unlist(lapply(data_hotel, function(x) any(is.na(x))))
    required_car_parking_spaces      total_of_special_requests             reservation_status        reservation_status_date 
                          FALSE                          FALSE                          FALSE                          FALSE 
 
-
-
+```
+```R
     [1] "Cantidad de columnas con NAs:"
 
                          hotel                    is_canceled                      lead_time              arrival_date_year 
@@ -272,8 +273,8 @@ unlist(lapply(data_hotel, function(x) any(is.na(x))))
                              0                              0                              0                              0 
 
 
-
-
+```
+```R
     [1] "Reemplazando para los atributos vacios, ahora no hay más NAs:"
 
 
@@ -295,7 +296,7 @@ hotel                    is_canceled                      lead_time             
    required_car_parking_spaces      total_of_special_requests             reservation_status        reservation_status_date 
                          FALSE                          FALSE                          FALSE                          FALSE 
 
-
+```
 
 ### 2.2. Cambio de tipo de datos e instalación de paquetes necesarios
 ```R
@@ -332,6 +333,7 @@ max(data_hotel$adr, na.rm = TRUE)
 min(data_hotel$adr, na.rm = TRUE)
 fivenum(data_hotel$adr)
 ```
+```R
 >   max(data_hotel$adr, na.rm = TRUE)
 [1] 5400
 >   min(data_hotel$adr, na.rm = TRUE)
@@ -344,7 +346,7 @@ fivenum(data_hotel$adr)
 [1] 0
 >   fivenum(data_hotel$lead_time)
 [1]   0  18  69 160 737
-
+```
 ```R
 boxplot(data_hotel$adr, col = "lightgreen",main="Boxplot ADR",horizontal = TRUE)
 
@@ -358,6 +360,7 @@ outliers.values <- boxplot(data_hotel$lead_time)$out
 #Todos los valores que son extremos
 outliers.values
 ```
+```R
 [1] 225.00 213.75 230.67 216.13 249.00 241.50 214.00 214.00 240.64 217.05 233.00 222.67 240.00 233.05 219.43 240.00 250.33
   [18] 280.74 219.50 214.00 252.00 233.00 237.00 222.14 220.55 221.00 230.50 230.50 241.00 242.60 268.00 217.20 239.30 267.00
   [35] 226.00 277.50 221.00 250.00 211.75 246.00 252.00 276.43 228.00 211.50 277.00 214.00 254.00 221.00 233.00 214.00 241.00
@@ -418,22 +421,25 @@ outliers.values
  [970] 251.43 259.00 249.00 235.00 240.00 243.33 303.33 295.67 295.67 220.00 242.00 342.17 262.38 284.86 251.43 340.86 251.00
  [987] 299.43 294.29 293.86 245.30 290.00 290.00 242.00 229.00 244.16 222.00 295.00 289.80 253.80 230.00
  [ reached getOption("max.print") -- omitted 2793 entries ]
+```
 ```R
 #Resumen de las columnas que tienen más outliers
 summary(data_hotel$adr)
-```
+
+
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   -6.38   69.29   94.58  101.83  126.00 5400.00 
-
+```
 ```R
 summary(data_hotel$lead_time)
-```
+
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
       0      18      69     104     160     737 
 
+```
 ```R
 boxplot.stats(data_hotel$adr)$out
-```
+
 [1] 225.00 213.75 230.67 216.13 249.00 241.50 214.00 214.00 240.64 217.05 233.00 222.67 240.00 233.05 219.43 240.00 250.33
   [18] 280.74 219.50 214.00 252.00 233.00 237.00 222.14 220.55 221.00 230.50 230.50 241.00 242.60 268.00 217.20 239.30 267.00
   [35] 226.00 277.50 221.00 250.00 211.75 246.00 252.00 276.43 228.00 211.50 277.00 214.00 254.00 221.00 233.00 214.00 241.00
@@ -494,9 +500,10 @@ boxplot.stats(data_hotel$adr)$out
  [970] 251.43 259.00 249.00 235.00 240.00 243.33 303.33 295.67 295.67 220.00 242.00 342.17 262.38 284.86 251.43 340.86 251.00
  [987] 299.43 294.29 293.86 245.30 290.00 290.00 242.00 229.00 244.16 222.00 295.00 289.80 253.80 230.00
  [ reached getOption("max.print") -- omitted 2793 entries ]
- ```R
+ ```
+```R
 boxplot.stats(data_hotel$lead_time)$out
-```
+
 [1] 737 394 460 381 382 709 468 468 468 468 468 468 468 468 468 468 398 424 434 374 406 406 406 406 406 400 379 399 385 422 390
   [32] 390 394 376 376 376 375 385 385 385 397 397 385 385 385 397 397 397 385 385 397 397 397 397 397 385 385 385 385 385 397 397
   [63] 397 385 385 397 397 385 385 397 397 385 385 385 542 542 542 542 542 542 542 542 542 542 403 403 383 383 383 383 383 383 383
@@ -530,6 +537,7 @@ boxplot.stats(data_hotel$lead_time)$out
  [931] 433 433 433 433 433 433 433 433 433 433 433 433 433 433 433 433 433 433 422 422 422 422 422 422 422 422 422 422 422 422 422
  [962] 422 422 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440 440
  [993] 440 440 440 429 429 429 429 429
+```
 ```R
 boxplot(data_hotel$adr,
          main = "Average Daily Rate",
@@ -581,11 +589,11 @@ boxplot(data_hotel$adr,
            x[x>qrts[2]+altura] <- caps[2]
            x
           }
-  ```
+  
   par(mfrow = c(1,2))
    boxplot(replace_outliers(data_hotel$adr), main = "Average Daily Month sin Outliers")
    boxplot(replace_outliers(data_hotel$lead_time), main = "Tiempo de Espera sin Outliers")
- 
+ ```
 ## 4. Desarrollo de las preguntas="data4"></a>
 
 ### 4.1. ¿Cuántas reservas se realizan por tipo de hotel? o ¿Qué tipo de hotel prefiere la gente?<a name="data41"></a>
