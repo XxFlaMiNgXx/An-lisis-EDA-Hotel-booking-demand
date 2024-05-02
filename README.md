@@ -6,7 +6,7 @@
 <div style="float: right; width: 50%;">
 <p style="margin: 0; padding-top: 22px; text-align:right;"> Descripción y análisis de la base de datos hotel_booking</p>
 <p style="margin: 0; text-align:right;">2024 · Fundamentos de Data Science (Data science)</p>
-<p style="margin: 0; text-align:right;">Prof. Colaboradora: Nérida Isabel Manrique Tunque<b></b></p>
+<p style="margin: 0; text-align:right;">Profesora: Nérida Isabel Manrique Tunque<b></b></p>
 <p style="margin: 0; text-align:right; padding-button: 100px;">Alumnos: <b>Favio Enrique Arroyo Gamarra y Abel Kevin Aguilar Caceres</b> - <a href=""></a></p>
 </div>
 </div>
