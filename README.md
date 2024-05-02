@@ -73,17 +73,22 @@ if (grepl(",", L)) print("File has an English format")
 
 ```R
 # Como estamos trabajando con ficheros separados por commas, vamos a mirar un poco de datos
-df <- read.csv("train.csv")
-head(df)
+data_hotel <- read.csv('hotel_bookings.csv', header=TRUE, stringsAsFactors = FALSE, sep=',',dec='.')
 
-# Mirando los nombres de columnas del dataframe y los tipos de variables y informacion adicional
-print(paste("We are evaluating", nrow(df), "rows of code"))
-print("Column's names: ")
-colnames(df)
-sapply(df,class)
-str(df)
-summary(df)
-```
+View(data_hotel)
+
+head(data_hotel)
+
+print(paste("Estamos evaluando", nrow(data_hotel), "líneas de código"))
+print("Nombre de las columnas: ")
+
+colnames(data_hotel)
+
+sapply(data_hotel, class)
+
+str(data_hotel)
+
+summary(data_hotel)
 
 
 <table>
