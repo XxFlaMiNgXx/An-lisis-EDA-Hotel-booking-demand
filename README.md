@@ -172,6 +172,7 @@ colnames(data_hotel)
 
 
     'data.frame':	119390 obs. of  32 variables:
+ ```R   
  $ hotel                         : chr  "Resort Hotel" "Resort Hotel" "Resort Hotel" "Resort Hotel" ...
  $ is_canceled                   : int  0 0 0 0 0 0 0 0 1 1 ...
  $ lead_time                     : int  342 737 7 13 14 14 0 9 85 75 ...
@@ -205,7 +206,7 @@ colnames(data_hotel)
  $ reservation_status            : chr  "Check-Out" "Check-Out" "Check-Out" "Check-Out" ...
  $ reservation_status_date       : chr  "2015-07-01" "2015-07-01" "2015-07-02" "2015-07-02" ...
 > 
-
+```R
 
 
 
